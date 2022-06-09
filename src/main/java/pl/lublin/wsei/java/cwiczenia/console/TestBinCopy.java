@@ -1,20 +1,22 @@
 package pl.lublin.wsei.java.cwiczenia.console;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class TestBinCopy {
 
 
     public static void main(String[] args) throws IOException {
 
-        BufferedInputStream in = null;
-        BufferedOutputStream out = null;
+        FileInputStream in = null;
+        FileOutputStream out = null;
 
         long startTime = System.nanoTime();
 
         try {
-            in = new BufferedInputStream(new FileInputStream("sample_1920×1280.tiff"));
-            out = new BufferedOutputStream(new FileOutputStream("img_copy.tiff"));
+            in = new FileInputStream("sample_1920×1280.tiff");
+            out = new FileOutputStream("img_copy.tiff");
             int c;
 
             while ((c = in.read()) != -1) {
